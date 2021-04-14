@@ -33,4 +33,10 @@ fun main(args: Array<String>) {
     println("My name is $firstName $lastName ")
     println("My Birth Day is $date $month $year ")
     println("My Number is :"+(num3))
+    happyNewYear("123")
+}
+
+
+fun happyNewYear(args: String){
+    println("Happy New Year 2021")
 }
