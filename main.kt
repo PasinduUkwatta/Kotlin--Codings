@@ -129,13 +129,69 @@ fun main(args:Array<String>){
     println(player3.weapon.name.toUpperCase())
     println(player3.weapon.damageInfected)
 
+    println()
+
+    println(player2.show())
+
 
 //    println(tim.name)
 //    println(tim.lives)
 //    println(tim.level)
 //    println(tim.score)
 
+    val redPotion =Loot("Red Potion",LootType.POTION,value = 7.50)
+    val chestArmor =Loot("+3 chest armor",LootType.ARMOR,value = 80.00)
+    player2.getLoot(redPotion)
+    player2.getLoot(chestArmor)
+    player2.getLoot(Loot("Ring of protetion",LootType.RING,value = 40.25))
+    player2.getLoot(Loot("Invisibility Potion",LootType.POTION,value =35.95))
+    player2.showInventory()
+
+    if(player2.dropLoot(redPotion)){
+        player2.showInventory()
+    }else{
+        println("You dont have ${redPotion.name}")
+    }
+
+    val bluePotion = Loot("Blue Potion",LootType.POTION,value = 6.0)
+    if(player2.dropLoot(bluePotion)){
+        player2.showInventory()
+    }else{
+        println("You dont have ${bluePotion.name}")
+    }
+    println(player2.toString())
+    println(player2)
+    println(redPotion)
+    println(player2.weapon)
+//
+//    forLoop()
+//    forLoopChallange()
+
 }
 
 //-----------------------------------------------------------------
 
+fun forLoop(){
+    for(i in 0 until 11){
+        println(i)
+        println("$i squred ${i*i}")
+    }
+
+    for (i in 10 downTo 0){
+        println(i)
+    }
+
+    for(i in 10 downTo 0 step 2){
+        println(i)
+    }
+
+
+}
+
+fun forLoopChallange(){
+    for(i in 1..100){
+        if(i%3==0 && i%5==0){
+            println(i)
+        }
+    }
+}
