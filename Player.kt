@@ -35,19 +35,31 @@ class Player (val name :String,val level: Int=1,val lives :Int=3,val score :Int=
         }
     }
 
+    fun dropLoot(name: String) :Boolean{
+        for (item in inventory){
+            if(item.name==name){
+                inventory.remove(item)
+                return true
+            }
+        }
+   return false
+    }
+
 
 
     fun showInventory(){
         println("=============================")
-
+        var total=0.0
         println("$name Inventory")
         println(inventory.get(0))
         println(inventory.get(1))
 
         for (item in inventory){
             println(item)
+            total+=item.value
         }
         println("=============================")
+        println("Total Score $total ")
 
     }
 }
